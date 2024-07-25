@@ -54,9 +54,10 @@ while True:
           3. Multiplication
           4. Division
           5. Square of number
-          6. Square Root""")
+          6. Square Root
+          7. Sin Angle value""")
 
-    choice = input("Enter your choice (1/2/3/4/5/6): ")
+    choice = input("Enter your choice (1/2/3/4/5/6/7): ")
     if choice == "1":
         result = add(*inputs)
         print("Result of addition:", result)
@@ -75,6 +76,9 @@ while True:
     elif choice == '6':
         result = square_root(*inputs)
         print("result of square root", result)
+    elif choice == '7':
+        result = sine_angle(*inputs)
+        print("result of sine angle:", result)    
     else:
         print("invalid choice")
     choice = str(input("Do You Want To Continue?" " y for yes n for no:"))
