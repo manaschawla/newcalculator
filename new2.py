@@ -34,6 +34,12 @@ def square_root(*args):
         from math import sqrt
         result.append(sqrt(num))
     return result    
+def sine_angle(*args):
+    result = []
+    for num in args:
+        from math import sin
+        result.append(sin(num))
+    return result
         
 while True:
     n = int(input("enter the number of inputs"))
