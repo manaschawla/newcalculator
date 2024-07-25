@@ -1,77 +1,55 @@
-def add(*args):
-    return sum(args)
+"""this program is for a simple calculator which performs basic arithmetic operations like addition, subraction, multiplication, division """
 
+#this funtion is defind to add two numbers
 
-def subtract(*args):
-    result = args[0]
-    for num in args[1:]:
-        result -= num
-    return result
+def add(value1,value2):
+    sum = value1 + value2
+    print("sum of value1 and value2 is:",sum)
 
+#this function is defined to subract two numbers
 
-def multiply(*args):
-    result = 1
-    for num in args:
-        result *= num
-    return result
+def sub(value1,value2):
+    difference = value1 - value2
+    print("subraction of value1 and value2 is:",difference)
 
+#this function is defined to multiply two numbers
 
-def divide(*args):
-    result = args[0]
-    for num in args[1:]:
-        result /= num
-    return result
+def multiply(value1,value2):
+    total = value1 * value2
+    print("multiplication of value1 and value2 is:",total)  
 
+#this function is defined to divide two numbers
 
-def square(*args):
-    result = []
-    for num in args:
-        result.append(num**2)
-    return result
-def square_root(*args):
-    result = []
-    for num in args:
-        from math import sqrt
-        result.append(sqrt(num))
-    return result    
-        
+def divide(value1,value2):
+    division = value1 / value2
+    print("division of value1 and value2 is:",division)
+
+#A Loop is used here to run the code until the user wants to use it
 while True:
-    n = int(input("enter the number of inputs"))
-    inputs = []
-    for num in range(n):
-        user_input = int(input("enter the value:"))
-        inputs.append(user_input)
-        print("you entered:", inputs)
-    print("""Name Of Operations
-          1. Addition
-          2. Subtraction
-          3. Multiplication
-          4. Division
-          5. Square of number
-          6. Square Root""")
+#now take inputs from the user for values
+    value1 = int(input("enter the first number:"))
+    value2 = int(input("enter the second number:"))
 
-    choice = input("Enter your choice (1/2/3/4/5/6): ")
-    if choice == "1":
-        result = add(*inputs)
-        print("Result of addition:", result)
-    elif choice == "2":
-        result = subtract(*inputs)
-        print("Result of subtraction:", result)
-    elif choice == "3":
-        result = multiply(*inputs)
-        print("Result of multiplication:", result)
-    elif choice == "4":
-        result = divide(*inputs)
-        print("Result of division:", divide(*inputs))
-    elif choice == "5":
-        result = square(*inputs)
-        print("result of square", result)
-    elif choice == '6':
-        result = square_root(*inputs)
-        print("result of square root", result)
-    else:
-        print("invalid choice")
-    choice = str(input("Do You Want To Continue?" " y for yes n for no:"))
-    if choice == "n":
-        print("good bye sir")
+#tell about the operations which can be performed
+
+    print("please select operation:\n" "1.addition\n" "2.subraction\n"  "3.multiplication\n" "4.division\n" "5.quit")
+
+#take input from the user that which operation should be performed via 1, 2, 3, 4, 5 numbers
+
+    operator = int(input("enter the operation to  perform via 1,2,3,4,5:"))
+    if operator == 5:
+        print("good bye")
         break
+
+#using conditions to perform according to the input given to the operator
+
+    if operator == 1:
+     add(value1,value2)
+    elif operator == 2:
+     sub(value1,value2)
+    elif operator == 3:
+     multiply(value1,value2)
+    elif operator == 4:
+     divide(value1,value2)
+    else:
+     print("wrong input")
