@@ -28,19 +28,39 @@ def square(*args):
     for num in args:
         result.append(num**2)
     return result
+
+
 def square_root(*args):
     result = []
     for num in args:
         from math import sqrt
+
         result.append(sqrt(num))
-    return result    
+    return result
+
+
 def sine_angle(*args):
     result = []
     for num in args:
-        from math import sin
-        result.append(sin(num))
+        from math import sin, radians
+
+        angle_radian = radians(num)
+        result.append(sin(angle_radian))
+        return result
+
     return result
-        
+
+
+def cosine_angle(*args):
+    result = []
+    for num in args:
+        from math import cos, radians
+
+        angle_radian = radians(num)
+        result.append(cos(angle_radian))
+        return result
+
+
 while True:
     n = int(input("enter the number of inputs"))
     inputs = []
@@ -48,16 +68,19 @@ while True:
         user_input = int(input("enter the value:"))
         inputs.append(user_input)
         print("you entered:", inputs)
-    print("""Name Of Operations
+    print(
+        """Name Of Operations
           1. Addition
           2. Subtraction
           3. Multiplication
           4. Division
           5. Square of number
           6. Square Root
-          7. Sin Angle value""")
+          7. Sin Angle value
+          8. Cosine Angle Value"""
+    )
 
-    choice = input("Enter your choice (1/2/3/4/5/6/7): ")
+    choice = input("Enter your choice (1/2/3/4/5/6/7/8): ")
     if choice == "1":
         result = add(*inputs)
         print("Result of addition:", result)
@@ -73,12 +96,15 @@ while True:
     elif choice == "5":
         result = square(*inputs)
         print("result of square", result)
-    elif choice == '6':
+    elif choice == "6":
         result = square_root(*inputs)
         print("result of square root", result)
-    elif choice == '7':
+    elif choice == "7":
         result = sine_angle(*inputs)
-        print("result of sine angle:", result)    
+        print("result of sine angle:", result)
+    elif choice == '8':
+        result = cosine_angle(*inputs)
+        print("result of cos angle:", result)
     else:
         print("invalid choice")
     choice = str(input("Do You Want To Continue?" " y for yes n for no:"))
