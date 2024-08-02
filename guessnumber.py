@@ -22,5 +22,5 @@ while True:
             print(f"Congratulations! You guessed the correct number: {number_to_guess} in {attempts} attempts.")
     choice = input("do you want to play again 'y' for yes 'n' for no: ")    
     if choice == 'n':
-        print("THANK YOU FOR PLAYING")
+        print("THANK YOU FOR PLAYING the game")
         break
