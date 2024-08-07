@@ -62,7 +62,8 @@ def sine_angle(*args):
 
 
 def cosine_angle(*args):
-    """Returns the cosine of the input(angles in radian)"""
+    """Returns the cosine of the input(angles in radian)."""
+    #initialize a empty list
     result = []
     for num in args:
         from math import cos, radians
